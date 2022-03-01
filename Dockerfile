@@ -32,8 +32,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 # ---
 # Copy Container Setup Scripts
 # ---
-# COPY poetry.lock /usr/local/poetry.lock
-# COPY pyproject.toml /usr/local/pyproject.toml
+COPY poetry.lock /usr/local/poetry.lock
+COPY pyproject.toml /usr/local/pyproject.toml
 
 # Create the "home" folder
 RUN mkdir -p $HOME
@@ -47,9 +47,9 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 ENV PATH="${PATH}:$HOME/.poetry/bin"
 ENV PATH="${PATH}:$HOME/.local/bin"
 
-# RUN poetry config virtualenvs.create false \
-#     && cd /usr/local \
-#     && poetry install --no-interaction --no-ansi
+RUN poetry config virtualenvs.create false \
+    && cd /usr/local \
+    && poetry install --no-interaction --no-ansi
 
 # EXPOSE 8888
 # CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
