@@ -30,7 +30,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 # ---
 # COPY debian-requirements.txt /usr/local/debian-requirements.txt
 
-RUN apt-get update && build-essential \
+RUN apt-get update && \
+    apt-get install -y build-essential \
     curl \
     git \
     gnupg2 \
@@ -38,5 +39,4 @@ RUN apt-get update && build-essential \
     sudo \
     vim \
     wget && \
-    apt-get install -y $DEBIAN_PACKAGES && \
     apt-get clean
