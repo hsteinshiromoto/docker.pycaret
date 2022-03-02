@@ -33,7 +33,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 # Copy Container Setup Scripts
 # ---
 RUN python -m pip install -U wheel setuptools
-RUN pip install pycaret
+RUN pip install pycaret jupyterlab
 
 # Create the "home" folder
 RUN mkdir -p $HOME
@@ -51,5 +51,5 @@ USER $USERNAME
 #     && cd /usr/local \
 #     && poetry install --no-interaction --no-ansi
 
-# EXPOSE 8888
-# CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+EXPOSE 8888
+CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
