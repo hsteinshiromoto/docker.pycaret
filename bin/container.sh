@@ -42,7 +42,7 @@ make_variables() {
     set +a
 
     PROJECT_ROOT=$(pwd)
-    DOCKER_USER=vscode
+    DOCKER_USER=docker.pycaret
 
     DOCKER_IMAGE=hsteinshiromoto/docker.pycaret
     DOCKER_TAG=${DOCKER_TAG:-latest}
