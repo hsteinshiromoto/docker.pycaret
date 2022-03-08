@@ -33,7 +33,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 # Copy Container Setup Scripts
 # ---
 RUN python -m pip install --upgrade pip && python -m pip install -U wheel setuptools
-RUN pip install pycaret jupyterlab pyarrow pandas-profiling
+RUN pip install pycaret jupyterlab pyarrow pandas-profiling pycaret-ts-alpha
 
 # Create the "home" folder
 RUN mkdir -p $HOME
