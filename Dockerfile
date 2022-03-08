@@ -33,10 +33,10 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 # Copy Container Setup Scripts
 # ---
 RUN python -m pip install --upgrade pip && python -m pip install -U wheel setuptools
-RUN pip install pycaret jupyterlab pyarrow pandas-profiling
+RUN pip install pycaret[full] jupyterlab pyarrow pandas-profiling
 
 # To install time series module of pycaret, it's necessary to upgrade pip again!
-RUN python -m pip install --upgrade pip && pycaret-ts-alpha
+RUN python -m pip install --upgrade pip && pip install pycaret-ts-alpha
 
 # Create the "home" folder
 RUN mkdir -p $HOME
