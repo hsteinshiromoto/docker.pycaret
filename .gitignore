@@ -5,9 +5,17 @@
 ## Folders ##
 .local/
 .jupyter/
+data/*
+catboost_info/*
 
 ## Files ##
 .bash_history
+*.ipynb 
+*.png
+*.csv
+*.pkl
+eda.html
+eda.py
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
